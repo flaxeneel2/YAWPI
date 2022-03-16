@@ -1,0 +1,18 @@
+{
+  "author": {
+    "name": "flaxeneel2",
+    "email": "flaxeneel2@gmail.com",
+    "url": "https://github.com/flaxeneel2"
+  },
+  "repository": {
+    "url": "https://github.com/flaxeneel2/YAWPI"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "chalk": "^5.0.1"
+  }
+}
