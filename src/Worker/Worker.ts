@@ -1,12 +1,13 @@
 import EventEmitter from "events";
-import Task from "../Task/Task";
+import Task from "../Task/Task.js";
 import {ChildProcess,fork} from "child_process";
+import path from "path"
 export default class Worker extends EventEmitter {
     private queuedTasks: number = 0
     private childProcess: ChildProcess
     constructor() {
         super();
-        this.childProcess = fork("./Thread.js")
+        this.childProcess = fork(path.join(process.cwd(), "node_modules", "yawpi", "dist", "Worker", "Thread.js"))
     }
 
     getQueueLength() {
@@ -14,7 +15,7 @@ export default class Worker extends EventEmitter {
     }
 
     execTask(task: Task) {
-        this.childProcess.send({task: task})
+        this.childProcess.send(task)
     }
 }
 

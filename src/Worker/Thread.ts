@@ -1,3 +1,3 @@
-process.on("message", (data) => {
+process.on("message", (data: any) => {
     console.log(data)
 })

@@ -1,6 +1,8 @@
 import EventEmitter from "events";
 import os from "os"
-import Worker from "./Worker";
+import Worker from "./Worker.js";
+import Task from "../Task/Task.js";
+import {TaskOptions} from "../util/Interfaces.js";
 export default class WorkerPool extends EventEmitter {
     private workerCount: number
     private workers: Worker[] = []
@@ -26,9 +28,9 @@ export default class WorkerPool extends EventEmitter {
         return this.workers
     }
 
-    exec() {
+    exec(execTask: Function, args: any[], runType: TaskOptions) {
         let suitableWorker = this.getFreestWorker()
-
+        suitableWorker?.execTask(new Task(execTask, args, runType))
     }
 
     getFreestWorker() {
