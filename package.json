@@ -5,6 +5,7 @@
     "url": "https://github.com/flaxeneel2"
   },
   "name": "yawpi",
+  "main": "dist/index.js",
   "version": "0.0.1-DEV",
   "repository": {
     "url": "https://github.com/flaxeneel2/YAWPI"
